@@ -9,3 +9,5 @@ It's a completely secure application using JWT Tokens, HTTP-Only Cookies, Signed
 
 Contributions are welcome
 
+Commands to run:
+npm run dev
