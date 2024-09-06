@@ -1,3 +1,9 @@
-console.log(
-  "This is a starter kit for this amazing project. With 💓 By Indian Coders"
-);
+import express from 'express';
+
+const app = express();
+
+app.get("/", (req, res, next) =>{
+return res.send("Hi")
+})
+
+app.listen(8000, ()=> console.log("Server listening"));
