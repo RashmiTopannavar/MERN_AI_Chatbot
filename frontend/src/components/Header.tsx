@@ -23,7 +23,7 @@ const Header = () => {
               <NavigationLink
                 bg="#51538f"
                 textColor="white"
-                to="Logout"
+                to="/"
                 text="logout"
                 onClick={auth.logout}
               />
