@@ -1,14 +1,50 @@
 import { AppBar, Toolbar } from "@mui/material";
-import React from "react";
 import Logo from "./shared/Logo";
+import { useAuth } from "../context/AuthContext";
+import NavigationLink from "./shared/NavigationLink";
 
 const Header = () => {
+  const auth = useAuth();
   return (
     <AppBar
       sx={{ bgcolor: "transparent", position: "static", boxShadow: "none" }}
     >
       <Toolbar sx={{ display: "flex" }}>
         <Logo />
+        <div>
+          {auth?.isLoggedIn ? (
+            <>
+              <NavigationLink
+                bg="#00fffc"
+                text="Go To Chat"
+                to="/chat"
+                textColor="black"
+              />
+              <NavigationLink
+                bg="#51538f"
+                textColor="white"
+                to="Logout"
+                text="logout"
+                onClick={auth.logout}
+              />
+            </>
+          ) : (
+            <>
+              <NavigationLink
+                bg="#00fffc"
+                text="Login"
+                to="/login"
+                textColor="black"
+              />
+              <NavigationLink
+                bg="#51538f"
+                textColor="white"
+                to="/signup"
+                text="Signup"
+              />
+            </>
+          )}
+        </div>
       </Toolbar>
     </AppBar>
   );
